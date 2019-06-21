@@ -1,22 +1,22 @@
 package sorter;
 
-public class Rubbish {
+class Rubbish {
     private String name;
     private RubbishType rubbishType;
 
-    public Rubbish(String name){
+    protected void setName(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public RubbishType getRubbishType() {
+    protected RubbishType getRubbishType() {
         return rubbishType;
     }
 
-    public void setRubbishType(RubbishType rubbishType) {
+    protected void setRubbishType(RubbishType rubbishType) {
         this.rubbishType = rubbishType;
     }
 
