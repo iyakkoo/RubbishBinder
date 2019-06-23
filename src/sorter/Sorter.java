@@ -28,7 +28,7 @@ class Sorter {
     }
 
     private void putRubbishToSorter() {
-        if (isInDatabase()) { //usunąć metodę isInDatabase w obecnej postaci, wykorzystać budowę metody getThatRubbishType
+        if (isInDatabase()) {
             getThatRubbishType();
         } else {
             addNewRubbish();
@@ -51,6 +51,12 @@ class Sorter {
         setRubbishTypeForNewRubbish();
         addThisRubbishToDatabase();
         showMessage(1);
+    }
+
+    private void setRubbishTypeForNewRubbish() {
+        while(rubbish.getRubbishType() == null){
+            rubbish.setRubbishType(chooseType());
+        }
     }
 
     private boolean addThisRubbishToDatabase() {
@@ -80,13 +86,6 @@ class Sorter {
                     rubbish.getRubbishType().toString().toLowerCase());
         } else {
             System.out.println("niepoprawnie dobrana wiadomość");
-        }
-    }
-
-    private void setRubbishTypeForNewRubbish() {
-        rubbish.setRubbishType(chooseType());
-        if (rubbish.getRubbishType() == null) {
-            setRubbishTypeForNewRubbish();
         }
     }
 
